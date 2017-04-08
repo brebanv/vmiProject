@@ -2,33 +2,22 @@
 <html>
 <head>
     <title>vmiProject</title>
+    <link rel="stylesheet" type="text/css" href="index_style.css">
 </head>
-<body>
 
-<center>
+<body>
     <table>
         <tr><th>id</th><th>First Name</th><th>Last Name</th><th>Email</th></tr>
         <?php
-
-        $conn = new mysqli("127.0.0.1", "root", "", "users");
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        echo "Connected successfully";
-
+        require_once ("connect_db.php");
         $query = "SELECT * FROM userInfo";
         $result = mysqli_query($conn,$query);
 
         while($row = mysqli_fetch_array($result)){
-            echo "<tr><td>".$row["idUser"]."</td><td>".$row["firstName"]."</td><td>".$row["lastName"]."</td><td>".$row["email"]."</td></tr>";
+            echo "<tr><td>".$row["id"]."</td><td>".$row["firstName"]."</td><td>".$row["lastName"]."</td><td>".$row["email"]."</td></tr>";
         }
 
-        $conn->close();
         ?>
     </table>
-</center>
-
 </body>
 </html>
