@@ -6,18 +6,12 @@
 </head>
 
 <body>
-    <table>
-        <tr><th>id</th><th>First Name</th><th>Last Name</th><th>Email</th></tr>
-        <?php
-        require_once ("connect_db.php");
-        $query = "SELECT * FROM userInfo";
-        $result = mysqli_query($conn,$query);
+<form action="login.html">
+    <button type="submit">Go to Login!</button>
+</form>
+<form action="register.html">
+    <button type="submit">Go to Register!</button>
+</form>
 
-        while($row = mysqli_fetch_array($result)){
-            echo "<tr><td>".$row["id"]."</td><td>".$row["firstName"]."</td><td>".$row["lastName"]."</td><td>".$row["email"]."</td></tr>";
-        }
-
-        ?>
-    </table>
 </body>
 </html>
