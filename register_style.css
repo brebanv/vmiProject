@@ -33,7 +33,10 @@ button {
 
 /* Add padding to container elements */
 .container {
-    padding: 16px;
+    padding-left: 250px;
+    padding-right: 250px;
+    padding-bottom: 50px;
+    padding-top: 20px;
 }
 
 button {
@@ -48,16 +51,16 @@ button {
     background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e466e', endColorstr='#415989',GradientType=0);
     background-color:#2e466e;
-    -moz-border-radius:17px;
-    -webkit-border-radius:17px;
-    border-radius:17px;
+    -moz-border-radius:13px;
+    -webkit-border-radius:13px;
+    border-radius:25px;
     border:1px solid #1f2f47;
     display:inline-block;
     cursor:pointer;
     color:#ffffff;
-    font-family:Courier New;
-    font-size:15px;
-    padding:8px 530px;
+    font-family: Courier New;
+    font-size:17px;
+    padding:8px 300px;
     text-decoration:none;
     text-shadow:0px 1px 0px #263666;
 }
@@ -84,7 +87,9 @@ button:hover {
     clear: both;
     display: table;
 }
-
+.login_title {
+    text-align: center;
+}
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
     .cancelbtn, .signupbtn {

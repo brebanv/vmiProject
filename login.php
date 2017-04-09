@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,9 +9,8 @@
 
 <h2 class="login_title">Login</h2>
 
-<form action="homePage.php">
+<form action="homePage.php" method="POST">
     <div class="imgcontainer">
-
     </div>
 
     <div class="container">
@@ -19,10 +18,9 @@
         <input type="text" placeholder="Email" name="uname" required>
 
         <label><b>Password</b></label>
-        <input type="password" placeholder="Password" name="psw" required>
+        <input type="password" placeholder="Password" name="pwd" required>
 
         <button type="submit">Login</button>
-        <input type="checkbox" checked="checked"> Remember me
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
