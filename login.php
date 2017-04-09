@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,13 +11,13 @@
 
 <h2 class="login_title">Login</h2>
 
-<form action="homePage.php" method="POST">
+<form action="login_insert_db.php" method="POST">
     <div class="imgcontainer">
     </div>
 
     <div class="container">
         <label><b>Email</b></label>
-        <input type="text" placeholder="Email" name="uname" required>
+        <input type="text" placeholder="Email" name="email" required>
 
         <label><b>Password</b></label>
         <input type="password" placeholder="Password" name="pwd" required>
@@ -27,6 +29,15 @@
         <span class="psw"><a href="#">Forgot password?</a></span>
     </div>
 </form>
+
+
+<?php
+    if (isset($_SESSION['id'])) {
+        echo $_SESSION['id'];
+    } else {
+        echo "You are not logged in!";
+    }
+?>
 
 </body>
 </html>

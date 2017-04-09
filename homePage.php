@@ -6,4 +6,4 @@
  * Time: 21:36
  */
 ?>
-<h1>Register reusit!</h1>
+<h1></h1>
