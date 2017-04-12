@@ -1,6 +1,7 @@
 <?php
     session_start();
 ?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -11,7 +12,7 @@
 
 <h2 class="login_title">Login</h2>
 
-<form action="login_insert_db.php" method="POST">
+<form action="login_validate_db.php" method="post" >
     <div class="imgcontainer">
     </div>
 
@@ -25,9 +26,6 @@
         <button type="submit">Login</button>
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-        <span class="psw"><a href="#">Forgot password?</a></span>
-    </div>
 </form>
 
 
@@ -38,6 +36,10 @@
         echo "You are not logged in!";
     }
 ?>
+
+<form action="../logout.php">
+    <button>LOGOUT</button>
+</form>
 
 </body>
 </html>
