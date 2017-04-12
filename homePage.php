@@ -6,3 +6,9 @@
  * Time: 21:36
  */
 echo "Home page!";
+?>
+<html>
+    <form action="logout.php">
+        <button>LOGOUT</button>
+    </form>
+</html>

@@ -37,9 +37,5 @@
     }
 ?>
 
-<form action="../logout.php">
-    <button>LOGOUT</button>
-</form>
-
 </body>
 </html>
