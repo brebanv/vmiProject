@@ -7,6 +7,7 @@
  */
 session_start();
 session_destroy();
+echo "Logout";
 ?>
 <script>
 window.open('login/login.php','_self');
