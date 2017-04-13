@@ -1,3 +1,5 @@
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,5 +29,20 @@
         </div>
     </div>
 </form>
+
+
+<?php
+$url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+if(strpos($url, 'error=email') !== false) {
+    ?>
+    <h1 class="already_exist">This email already exist. Please login!</h1>
+    <form action="../login/login.php">
+        <div class="center_div">
+            <button type="submit" class="button_login">Login</button>
+        </div>
+    </form>
+    <?php
+}
+?>
 </body>
 </html>

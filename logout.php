@@ -7,8 +7,13 @@
  */
 session_start();
 session_destroy();
-echo "Logout";
 ?>
+<html>
+<link rel="stylesheet" type="text/css" href="logging.css"/>
+<body class = logging_out>
+    <h1>Logging out...</h1>
+</body>
+</html>
 <script>
 window.open('login/login.php','_self');
 </script>

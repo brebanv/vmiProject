@@ -1,8 +1,3 @@
-form {
-    border: 3px solid #f1f1f1;
-    background-color: cadetblue;
-}
-
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -10,6 +5,16 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
+
+h1 {
+    font-size: 200%;
+    text-align: center;
+    padding-top: 3%;
+}
+
+h3 {
+    text-align: center;
 }
 
 button {
@@ -38,7 +43,6 @@ button {
     text-shadow:0px 1px 0px #263666;
 }
 
-
 button:hover {
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #415989), color-stop(1, #2e466e));
     background:-moz-linear-gradient(top, #415989 5%, #2e466e 100%);
@@ -49,6 +53,7 @@ button:hover {
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#415989', endColorstr='#2e466e',GradientType=0);
     background-color:#415989;
 }
+
 .button:active {
     position:relative;
     top:1px;
@@ -74,7 +79,7 @@ img.avatar {
 .container {
     padding-left: 250px;
     padding-right: 250px;
-    padding-bottom: 50px;
+    padding-bottom: 0px;
     padding-top: 20px;
 }
 
@@ -96,4 +101,8 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
+}
+
+body {
+    background-color: darkgray;
 }
