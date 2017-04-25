@@ -1,11 +1,14 @@
 <?php
+session_start();
+?>
+
 /**
  * Created by PhpStorm.
  * User: Vlad
  * Date: 04.04.2017
  * Time: 21:36
  */
-?>
+
 <html>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel='stylesheet' type='text/css' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
@@ -14,6 +17,11 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+
+            </button>
+            <a class="navbar-brand" href="#">Toate</a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
 
@@ -48,7 +56,7 @@
             <ul class="nav navbar-nav navbar-right">
 
                <li> <form action="../logout.php">
-                       <button align="right">LOG OUTtt </button></li>
+                       <button align="right">LOG OUT </button></li>
 
                 </li>
             </ul>
@@ -59,13 +67,31 @@
 <img  src="forum.jpg" align=center width="300" height="160" border="4" hspace="10" vspace="7"></img>
 
 <body bgcolor="#F5F5F5">
-<div class="container">
-        <label><b>Pune o intrebare</b></label> <br>
-        <input type="text" placeholder="Add question" name="question" required>     <button>Adauga</button>
+
+<form action="insert_question_db.php" method="POST">
+
+    <form action="question_validate_db.php" method="POST" >
+        <div class="container">
+            <label><b>Pune o intrebare</b></label> <br>
+            <input type="text" placeholder="scrie aici" name="question" required>
+
+
+
+                <div class="center_div">
+                    <button type="submit"> Adauga</button>
+                </div>
+
+        </div>
+    </form>
+
+
 </div>
 
 
 </form>
 
 </body>
+<?php
+$url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+?>
 </html>
