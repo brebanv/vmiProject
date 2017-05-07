@@ -57,4 +57,8 @@
             <button type="submit" class="button">Adauga</button>
         </div>
     </form>
+
+    <form action="../logout.php">
+        <button type="submit" class="button">Logout</button>
+    </form>
 </html>
