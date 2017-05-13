@@ -1,5 +1,6 @@
-
-
+<?php
+require_once('../logout.php');
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

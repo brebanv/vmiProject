@@ -1,14 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Vlad
- * Date: 09.04.2017
- * Time: 23:02
- */
 session_start();
+$sessionId = session_id();
+
+
 require_once('../connect_db.php');
 parse_str(file_get_contents("php://input"), $_POST);
-
 $email = $_POST['email'];
 $pwd = $_POST['pwd'];
 
@@ -29,20 +25,28 @@ if($hash == 0){
     if(!$row = mysqli_fetch_assoc($result)){
         echo "Your username or password is incorrect!";
     }else {
-        ?>
-        <html>
-        <head>
-            <link rel="stylesheet" type="text/css" href="login_style.css"/>
-        </head>
-        <body class="logging">
-            <h1>Logging in...</h1>
-        </body>
-        </html>
 
-        <script>
-            window.open('../homePage.php', '_self');
-        </script>
-        <?php
+        $sql = "SELECT id FROM user WHERE email='".$email."' AND pwd='".$hash_pwp."'";
+        $result = mysqli_query($conn, $sql);
+        $row = $result->fetch_assoc();
+        $userId= (int)$row["id"];
+
+        if($userId > 0) {
+            $_SESSION['userId'] = $userId;
+            ?>
+            <html>
+            <head>
+                <link rel="stylesheet" type="text/css" href="login_style.css"/>
+            </head>
+            <body class="logging">
+            <h1>Logging in...</h1>
+            </body>
+            </html>
+            <?php
+            header("Location: ../homePage/homePage.php");
+        }else{
+            header("Location: ../login/login.php?error=invalid_credentials");
+        }
     }
 }
 ?>
