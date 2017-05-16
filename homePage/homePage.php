@@ -2,73 +2,33 @@
 session_start();
 if (isset($_SESSION['userId'])) {
 ?>
+
     <html>
-    <label>Home Page!</label>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <link rel='stylesheet' type='text/css' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
 
-                </button>
-                <a class="navbar-brand" href="#">Toate</a>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
+    <button type="submit" class="button" name="sport">Sport</button>
+    <button type="submit" class="button" name="tehnologie">Tehnologie</button>
+    <button type="submit" class="button" name="religie">Religie</button>
+    <button type="submit" class="button" name="scoala">Scoala</button>
 
-                </button>
-                <a class="navbar-brand" href="#">Adolescenti</a>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-
-                </button>
-                <a class="navbar-brand" href="#">Sport</a>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-
-                </button>
-                <a class="navbar-brand" href="#">Arta</a>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-
-                </button>
-                <a class="navbar-brand" href="#">Tehnologie</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-
-    <form action="add_question.php" method="POST">
-        <div>
+    <form action="veziIntrebarile.php" method="POST">
+        <button type="submit" class="button" name="veziIntrebare">Vezi intrebarile</button>
+    </form>
+    <form action="add_question_db.php" method="POST">
             <label><b>Pune o intrebare</b></label>
             <input type="text" placeholder="Adauga" name="question" required>
             <button type="submit" class="button">Adauga</button>
-        </div>
     </form>
 
-    <form action="../logoutByButton.php">
-        <button type="submit" class="button">Logout</button>
-    </form>
     </html>
+
 <?php
+    $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    if(strpos($url, 'error=question') !== false) {
+        ?>
+        <h1>Aceasta intrebare exista deja!</h1>
+        <?php
+    }
 } else {
-    header("Location: ../login/login.php?error=invalid_credentials");
+    header("Location: ../login/login.php");
 }
 ?>
-
