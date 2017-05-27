@@ -2,23 +2,41 @@
 session_start();
 if (isset($_SESSION['userId'])) {
 ?>
-
     <html>
-
-    <button type="submit" class="button" name="sport">Sport</button>
-    <button type="submit" class="button" name="tehnologie">Tehnologie</button>
-    <button type="submit" class="button" name="religie">Religie</button>
-    <button type="submit" class="button" name="scoala">Scoala</button>
-
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="homePage.css"/>
+    </head>
+<body>
+    <h2>Alege un domeniu:</h2>
+    <button type="submit" class="myButton" name="sport">Sport</button>
+    <button type="submit" class="myButton" name="tehnologie">Tehnologie</button>
+    <button type="submit" class="myButton" name="religie">Religie</button>
+    <button type="submit" class="myButton" name="scoala">Scoala</button>
+    <button type="submit" class="myButton" name="diverse">Diverse</button>
+    <p></p>
     <form action="veziIntrebarile.php" method="POST">
-        <button type="submit" class="button" name="veziIntrebare">Vezi intrebarile</button>
+        <button type="submit" class="button_VeziIntrebarile" name="veziIntrebare">Vezi intrebarile</button>
     </form>
-    <form action="add_question_db.php" method="POST">
-            <label><b>Pune o intrebare</b></label>
-            <input type="text" placeholder="Adauga" name="question" required>
-            <button type="submit" class="button">Adauga</button>
-    </form>
+    Sau pune o intrebare:
+    <div class="container">
+        <form action="add_question_db.php" method="POST">
 
+            <label><b>Alege categoria: </b></label>
+            <select id="category" name="category">
+                <option value="0">Diverse</option>
+                <option value="Sport">Sport</option>
+                <option value="Tehnologie">Tehnologie</option>
+                <option value="Religie">Religie</option>
+                <option value="Scoala">Scoala</option>
+            </select>
+            <input type="text" placeholder="Adauga intrebarea" name="question" required>  <br>
+            <h1></h1>
+            <button type="submit" class="button">Adauga</button>
+        </form>
+    </div>
+</body>
     </html>
 
 <?php
@@ -29,6 +47,6 @@ if (isset($_SESSION['userId'])) {
         <?php
     }
 } else {
-    header("Location: ../login/login.php");
+    header("Location: ../index.php");
 }
 ?>

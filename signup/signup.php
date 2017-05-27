@@ -25,9 +25,8 @@ require_once('../logout.php');
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="pwd" required>
 
-        <div>
-            <button type="submit" class="button">Sign Up</button>
-        </div>
+        <button type="submit" class="button">Sign Up</button>
+
     </div>
 </form>
 

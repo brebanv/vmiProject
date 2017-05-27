@@ -9,11 +9,11 @@
 <h2 class="login_title">Welcome to our forum!</h2>
 
 <form class="index_buttons" action="login/login.php">
-    <button type="submit">Login!</button>
+    <button type="submit" class="btn">Login!</button>
 </form>
 
 <form class="index_buttons" action="signup/signup.php">
-    <button type="submit">Register!</button>
+    <button type="submit" class="btn">Register!</button>
 </form>
 
 </body>
