@@ -23,8 +23,8 @@ if ($questionCheck > 0) {
             if(mysqli_num_rows($result) > 0){
                     while($row = mysqli_fetch_array($result)){
                             echo   $row['id'] . " </td>";
-             echo   $row['question'] . "</td>";
-             echo "     <br />";
+                            echo   $row['question'] . "</td>";
+                            echo "     <br />";
          }
          // Free result set
          mysqli_free_result($result);
