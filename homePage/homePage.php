@@ -33,7 +33,7 @@ if (isset($_SESSION['userId'])) {
             </select>
             <input type="text" placeholder="Adauga intrebarea" name="question" required>  <br>
             <h1></h1>
-            <button type="submit" class="button">Adauga</button>
+            <button type="submit" class="button_adauga">Adauga</button>
         </form>
     </div>
 </body>
