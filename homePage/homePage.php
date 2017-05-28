@@ -9,23 +9,26 @@ if (isset($_SESSION['userId'])) {
         <link rel="stylesheet" type="text/css" href="homePage.css"/>
     </head>
 <body>
-    <h2>Alege un domeniu:</h2>
-    <button type="submit" class="myButton" name="sport">Sport</button>
-    <button type="submit" class="myButton" name="tehnologie">Tehnologie</button>
-    <button type="submit" class="myButton" name="religie">Religie</button>
-    <button type="submit" class="myButton" name="scoala">Scoala</button>
-    <button type="submit" class="myButton" name="diverse">Diverse</button>
+<ul>
+    <li><a href="veziIntrebarile.php?domeniu=Tehnologie">Tehnologie</a></li>
+    <li><a href="veziIntrebarile.php?domeniu=Sport">Sport</a></li>
+    <li><a href="veziIntrebarile.php?domeniu=Religie">Religie</a></li>
+    <li><a href="veziIntrebarile.php?domeniu=Scoala">Scoala</a></li>
+    <li><a href="veziIntrebarile.php?domeniu=Diverse">Diverse</a></li>
+</ul>
+
     <p></p>
     <form action="veziIntrebarile.php" method="POST">
         <button type="submit" class="button_VeziIntrebarile" name="veziIntrebare">Vezi intrebarile</button>
     </form>
-    Sau pune o intrebare:
+    <h2>Adauga o intrebare</h2>
     <div class="container">
         <form action="add_question_db.php" method="POST">
 
             <label><b>Alege categoria: </b></label>
             <select id="category" name="category">
-                <option value="0">Diverse</option>
+                <option value="0">Alege Domeniu</option>
+                <option value="Diverse">Diverse</option>
                 <option value="Sport">Sport</option>
                 <option value="Tehnologie">Tehnologie</option>
                 <option value="Religie">Religie</option>
@@ -44,6 +47,11 @@ if (isset($_SESSION['userId'])) {
     if(strpos($url, 'error=question') !== false) {
         ?>
         <h1>Aceasta intrebare exista deja!</h1>
+        <?php
+    }
+    if(strpos($url, 'error=domeniu') !== false){
+        ?>
+        <h1>Alege un domeniu!</h1>
         <?php
     }
 } else {

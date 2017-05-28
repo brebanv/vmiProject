@@ -6,6 +6,7 @@ parse_str(file_get_contents("php://input"), $_POST);
 $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 $questionId = substr($url, -2);
+
 $answer = $_POST['answer'];
 
     $sql = "INSERT INTO answers (questionId, answer, currdate) VALUES ('$questionId' , '$answer' , now())";

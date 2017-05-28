@@ -6,6 +6,7 @@
 </head>
 <body>
 <h2>Toate intrebarile:</h2>
+
 </html>
 <?php
 session_start();
@@ -20,12 +21,12 @@ if($result = mysqli_query($conn, $sql)){
 
             $sql_q = "SELECT * FROM answers WHERE questionId = " .$row['id'];
 
-            echo "Intrebare din " . $row['category'] . " : " . $row['question'] . "<br>";
+            echo "Intrebare din " . $row['category'] . " : <font size = 4><b>" . $row['question'] . "</b></font>      <sub><font size = 1><i>".$row['currDate']."</i></font></sub><br>";
             echo "Respunsuri: <br>";
             if($result_q = mysqli_query($conn, $sql_q)){
                 if(mysqli_num_rows($result_q) > 0){
                     while($row_q = mysqli_fetch_array($result_q)){
-                        echo $row_q['answer'] . "<br>";
+                        echo "<b>".$row_q['answer'] .  "</b>    <sub><font size = 1><i>".$row_q['currDate'] . "</i></font></sub><br>";
                     }
                 }
             }
@@ -47,5 +48,10 @@ if($result = mysqli_query($conn, $sql)){
 }
 ?>
 <html>
+<div class = adauga_intrebare>
+    <form action="homePage.php" method="POST">
+        <button type="submit">Adauga Intrebare</button>
+    </form>
+</div>
 </body>
 </html>
