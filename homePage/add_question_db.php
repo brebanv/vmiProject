@@ -7,7 +7,7 @@ parse_str(file_get_contents("php://input"), $_POST);
 $question = $_POST['question'];
 $category = $_POST['category'];
 
-if($category != 0) {
+if($category !== 0) {
 
     $sql = "SELECT question FROM questions WHERE question= '$question' AND category = '$category'";
     $result = mysqli_query($conn, $sql);
@@ -39,5 +39,5 @@ if($category != 0) {
     }
     header("Location: /vmiProject/vmiProject/homePage/veziIntrebarile.php");
 }else{
-    header("Location: homePage.php?error=domeniu");
+    //header("Location: homePage.php?error=domeniu");
 }
