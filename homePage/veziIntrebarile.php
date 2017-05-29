@@ -38,9 +38,6 @@ parse_str(file_get_contents("php://input"), $_POST);
         $sql = "SELECT * FROM questions WHERE category= '$domeniu'";
     }
 
-
-    //echo $sql;
-
     if($result = mysqli_query($conn, $sql)){
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_array($result)){
@@ -64,7 +61,6 @@ parse_str(file_get_contents("php://input"), $_POST);
                     </form>" ."</td>";
                 echo "<br />";
             }
-            // Free result set
             mysqli_free_result($result);
         } else{
             echo "No records matching your query were found.";
