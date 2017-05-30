@@ -86,7 +86,7 @@ parse_str(file_get_contents("php://input"), $_POST);
     <html>
     <div class = adauga_intrebare>
         <form action="homePage.php" method="POST">
-            <button type="submit">Adauga Intrebare</button>
+            <button class="button_adaugaIntrebare" type="submit">Adauga Intrebare</button>
         </form>
     </div>
     </body>
