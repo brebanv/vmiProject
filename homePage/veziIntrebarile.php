@@ -44,7 +44,15 @@ parse_str(file_get_contents("php://input"), $_POST);
 
                 $sql_q = "SELECT * FROM answers WHERE questionId = " .$row['id'];
 
-                echo "Intrebare din " . $row['category'] . " : <font size = 4><b>" . $row['question'] . "</b></font>      <sub><font size = 1><i>".$row['currDate']."</i></font></sub><br>";
+
+                $sql_u = "SELECT * FROM user WHERE id = ".$row['userID'];
+                $result_u = mysqli_query($conn, $sql_u);
+                $row_u = mysqli_fetch_assoc($result_u);
+
+                echo "Intrebare din " . $row['category'] . " : <font size = 4><b>" . $row['question'] . "</b></font>      <sub><font size = 1><i>".$row['currDate']." adaugata de ".$row_u['firstName']." ".$row_u['lastName']."</i></font></sub><br>";
+
+
+
                 echo "Raspunsuri: <br>";
                 if($result_q = mysqli_query($conn, $sql_q)){
                     if(mysqli_num_rows($result_q) > 0){

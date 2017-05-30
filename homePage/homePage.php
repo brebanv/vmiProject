@@ -1,7 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION['userId'])) {
-    echo $_SESSION['userId'];
+    $userID = $_SESSION['userId'];
+    echo $userID;
 ?>
     <html>
     <head>
@@ -40,6 +41,9 @@ if (isset($_SESSION['userId'])) {
             <button type="submit" class="button_adauga">Adauga</button>
         </form>
     </div>
+<form action="../logoutByButton.php" method="POST">
+    <button type="submit" class="button_adauga">Logout</button>
+</form>
 </body>
     </html>
 
