@@ -119,6 +119,30 @@ label{
     top:1px;
 }
 
+.button_logout {
+    background-color:#282880;
+    -moz-border-radius:11px;
+    -webkit-border-radius:11px;
+    border-radius:11px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Trebuchet MS;
+    font-size:18px;
+    padding:9px 47px;
+    text-decoration:none;
+    text-shadow:0px 0px 0px #2f6627;
+}
+.button_logout:hover {
+    background-color:#5cbf2a;
+}
+.button_logout:active {
+    position:relative;
+    top:1px;
+}
+
+
 ul {
     list-style-type: none;
     margin: 0;

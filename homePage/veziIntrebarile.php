@@ -48,7 +48,7 @@ parse_str(file_get_contents("php://input"), $_POST);
                 $result_u = mysqli_query($conn, $sql_u);
                 $row_u = mysqli_fetch_assoc($result_u);
 
-                echo "Intrebare din " . $row['category'] . " : <font size = 4><b>" . $row['question'] . "</b></font>      <sub><font size = 1><i>".$row['currDate']." adaugata de ".$row_u['firstName']." ".$row_u['lastName']."</i></font></sub><br>";
+                echo "Intrebare din " . $row['category'] . " : <font size = 4><b>" . $row['question'] . "</b></font>      <sub><font size = 1><i>adaugata de <b>".$row_u['firstName']." ".$row_u['lastName']."</b> la ".$row['currDate']."</i></font></sub><br>";
 
 
 

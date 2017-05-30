@@ -41,7 +41,7 @@ if (isset($_SESSION['userId'])) {
         </form>
     </div>
 <form action="../logoutByButton.php" method="POST">
-    <button type="submit" class="button_adauga">Logout</button>
+    <button type="submit" class="button_logout">Logout</button>
 </form>
 </body>
     </html>

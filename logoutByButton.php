@@ -15,5 +15,5 @@ session_destroy();
 </body>
 </html>
 <script>
-window.open('login/login.php','_self');
+window.open('index.php','_self');
 </script>
