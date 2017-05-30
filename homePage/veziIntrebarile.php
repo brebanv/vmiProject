@@ -44,7 +44,6 @@ parse_str(file_get_contents("php://input"), $_POST);
 
                 $sql_q = "SELECT * FROM answers WHERE questionId = " .$row['id'];
 
-
                 $sql_u = "SELECT * FROM user WHERE id = ".$row['userID'];
                 $result_u = mysqli_query($conn, $sql_u);
                 $row_u = mysqli_fetch_assoc($result_u);
@@ -54,10 +53,17 @@ parse_str(file_get_contents("php://input"), $_POST);
 
 
                 echo "Raspunsuri: <br>";
+
+
                 if($result_q = mysqli_query($conn, $sql_q)){
                     if(mysqli_num_rows($result_q) > 0){
                         while($row_q = mysqli_fetch_array($result_q)){
-                            echo "<b>".$row_q['answer'] .  "</b>    <sub><font size = 1><i>".$row_q['currDate'] . "</i></font></sub><br>";
+
+                            $sql_ua = "SELECT * FROM user WHERE id = ".$row_q['userID'];
+                            $result_ua = mysqli_query($conn, $sql_ua);
+                            $row_ua = mysqli_fetch_assoc($result_ua);
+
+                            echo "<b>".$row_q['answer'] .  "</b>    <sub><font size = 1><i>". " adaugat de <b>".$row_ua['firstName']." ".$row_ua['lastName']."</b> la ".$row_q['currDate'] ."</i></font></sub><br>";
                         }
                     }
                 }

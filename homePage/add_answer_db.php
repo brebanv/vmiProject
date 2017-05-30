@@ -5,11 +5,13 @@ parse_str(file_get_contents("php://input"), $_POST);
 
 $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
+$userID = $_SESSION['userId'];
+echo $userID;
 $questionId = substr($url, -2);
 
 $answer = $_POST['answer'];
 
-    $sql = "INSERT INTO answers (questionId, answer, currdate) VALUES ('$questionId' , '$answer' , now())";
+    $sql = "INSERT INTO answers (questionId, answer, currdate, userID) VALUES ('$questionId' , '$answer' , now(), '$userID')";
     $result = $conn->query($sql);
 
     $sql = "SELECT * FROM answers";
@@ -17,7 +19,8 @@ $answer = $_POST['answer'];
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_array($result)){
                 echo   $row['questionId'] . " </td>";
-                echo   $row['answer'] . "</td>";
+                echo   $row['answer'] . " </td>";
+                echo   $row['userID'] . "</td>";
                 echo "     <br />";
             }
             // Free result set

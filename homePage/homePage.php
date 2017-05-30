@@ -2,7 +2,6 @@
 session_start();
 if (isset($_SESSION['userId'])) {
     $userID = $_SESSION['userId'];
-    echo $userID;
 ?>
     <html>
     <head>
